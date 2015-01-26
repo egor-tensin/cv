@@ -1,0 +1,198 @@
+\documentclass[11pt]{article}
+
+% Basic setup
+\usepackage{cmap}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[english]{babel}
+
+% Sans serif font by default
+\renewcommand\familydefault{\sfdefault}
+
+\usepackage[margin=2.5cm]{geometry} % Document margins
+
+\usepackage{graphicx} % \includegraphics, used to include a picture of me
+
+% === Typography ===
+
+% == Boxes ==
+\usepackage{adjustbox}
+\usepackage{calc}
+
+% == Colors ==
+\usepackage[usenames,dvipsnames]{color}
+\definecolor{CvRuleColor}{gray}{0.5}
+\definecolor{CvWorkplaceHeaderColor}{gray}{0.97}
+
+% == URLs ==
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
+
+% == Paragraphs ==
+\usepackage{parskip}
+\setlength\parindent{0cm}
+\setlength\parskip{0cm}
+
+% == Lists ==
+\usepackage{enumitem} % [noitemsep]
+
+% === Custom commands ===
+
+% "C++", taken from http://tex.stackexchange.com/a/4304/9088
+\usepackage{relsize}
+\newcommand\CXX{%
+  C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\relsize{-3}{\textbf{++}}}%
+}
+
+% Whitespace skips
+\newcommand\CvSmallSkipLength{0.5em}
+\newcommand\CvBigSkipLength{1em}
+
+\newcommand\CvSkip[1]{\vspace{#1}}
+
+\newcommand\CvSmallSkip{\CvSkip{\CvSmallSkipLength}}
+\newcommand\CvBigSkip{\CvSkip{\CvBigSkipLength}}
+
+% Section headers ("Experience", "Education", etc.)
+\newcommand\CvSectionHeader[1]{\CvBigSkip\textbf{#1}\CvBigSkip}
+
+% Horizontal rules
+\newcommand\CvRule{\begingroup\color{CvRuleColor}\hrule\endgroup}
+
+% Workplace header 
+\newcommand\CvWorkplaceHeader[5]{\begingroup%
+  \CvRule
+  \fboxsep0pt%
+  \colorbox{CvWorkplaceHeaderColor}{%
+    \begin{minipage}{\linewidth-2\fboxsep}%
+\CvSmallSkip
+#1 -- #2 \hfill \textit{#3} at #4 (\href{http://#5/}{#5})
+\CvSmallSkip
+    \end{minipage}%
+  }%
+  \CvRule
+\endgroup}
+
+% Workplace description
+\newenvironment{CvWorkplaceDescription}{%
+    \begingroup\setlength\parskip{\CvSmallSkipLength}%
+  }{%
+    \CvSmallSkip\endgroup%
+  }
+
+\pagestyle{empty}
+
+\begin{document}
+
+\adjustbox{valign=t}{%
+\begin{minipage}{3.5cm}
+\includegraphics[width=3.5cm]{../selfie/face.jpg}
+\end{minipage}}%
+\hfill%
+\adjustbox{valign=t}{%
+\begin{minipage}{\linewidth-3.5cm-\CvBigSkipLength}%
+{\bf\large Egor Tensin} \\*
+{\color{CvRuleColor} Last updated on: \today}
+\CvBigSkip
+\CvRule
+\CvSmallSkip
+E-mail: \href{mailto:Egor.Tensin@gmail.com}{Egor.Tensin@gmail.com} \\*
+Web: \href{https://egor-tensin.github.io/}{https://egor-tensin.github.io/} \\*
+Tel.: +7\,(911)\,982-06-81 \\*
+Address: 7 Koroleva prospekt, apt. 378 \textbullet\ Saint Petersburg \textbullet\ Russia \textbullet\ 197341
+\CvSmallSkip
+\CvRule
+\end{minipage}}
+
+\CvSectionHeader{Experience}
+
+\CvWorkplaceHeader{April 2012}{May 2014}{Performance Engineer}{EMC Corp.}{russia.emc.com}
+
+\begin{CvWorkplaceDescription}
+I developed and maintained a tool for revealing, analyzing and solving storage system performance issues caused by process \& thread synchronization issues.
+The tool was used to improve storage system series performance by a few percent.
+
+I also troubleshooted performance issues within enterprise storage systems, including profiling, benchmarking, reporting performance statistics, etc.
+
+Key skills \& technologies employed:
+\begin{itemize}[noitemsep]
+\item {\CXX} programming (inc. {\CXX}11, STL \& Boost),
+\item C \& x86(-64) assembly language programming,
+\item cross-platform development using CMake,
+\item Microsoft Windows programming using WinAPI,
+\item POSIX-compliant system programming,
+\item Microsoft Windows \& Linux kernel module programming,
+\item debugging Microsoft Windows kernel modules using WinDbg,
+\item profiling using perf, Microsoft Windows Performance Toolkit and Intel VTune Amplifier.
+\end{itemize}
+\end{CvWorkplaceDescription}
+
+\CvWorkplaceHeader{May 2012}{September 2013}{Software Engineer}{Lanit-Tercom, Inc.}{www.lanit-tercom.ru}
+
+\begin{CvWorkplaceDescription}
+I took part in a R\&D on the impact intoduced to storage system performance by process \& thread synchronization issues.
+A prototype of a tool for revealing, analyzing and solving storage system performance issues was developed.
+
+Key skills \& technologies employed or studied:
+\begin{itemize}[noitemsep]
+\item C \& x86(-64) assembly language programming,
+\item Python programming,
+\item Microsoft Windows programming using WinAPI,
+\item Microsoft Windows kernel module programming,
+\item debugging Microsoft Windows kernel modules using WinDbg,
+\item x86(-64) architecture (interrupts, caches, memory barriers, atomic operations, etc.),
+\item undocumented Microsoft Windows features (system service dispatching, etc.).
+\end{itemize}
+\end{CvWorkplaceDescription}
+\CvRule
+
+\CvSectionHeader{Education}
+
+\CvWorkplaceHeader{2009}{2013}{Bachelor of Computer Science}{SPbSU}{eng.spbu.ru}
+
+\begin{CvWorkplaceDescription}
+During my education, I've been focusing on the following topics:
+\begin{itemize}[noitemsep]
+\item x86(-64) architecture (including writing a term paper "Verification of a x86-64 disassembler"),
+\item x86(-64) microarchitecture (including working on my bachelor thesis "Attacking AES in a cloud using CPU caches").
+\end{itemize}
+\end{CvWorkplaceDescription}
+\CvRule
+
+\begin{minipage}[t]{.49\linewidth}
+\CvSectionHeader{Languages}
+
+\begin{itemize}
+\item Russian --- mother tongue.
+\item English --- B2 (upper intermediate).
+\end{itemize}
+
+\CvSectionHeader{Programming Languages}
+
+\begin{itemize}
+\item C, x86(-64) assembly
+\item \CXX\ (inc. {\CXX}11, Boost \& STL)
+\item Python
+\item bash, cmd
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.49\linewidth}
+\CvSectionHeader{Development Tools \& Technologies}
+
+\begin{itemize}
+\item Microsoft Visual Studio
+\item AccuRev, Git, SVN
+\item GDB, WinDbg
+\item perf, Xperf, Intel VTune Amplifier
+\end{itemize}
+
+\CvSectionHeader{Other Tools \& Technologies}
+
+\begin{itemize}
+\item LibreOffice, Microsoft Office
+\item CygWin
+\item \LaTeX
+\end{itemize}
+\end{minipage}
+
+\end{document}
