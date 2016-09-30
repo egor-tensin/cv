@@ -1,10 +1,17 @@
-.PHONY: clean clean-all
+MKDIR = mkdir -p
+RMDIR = $(RM) -r
 
-cv.pdf : cv.tex img/selfie_face.jpg
-	pdflatex -interaction=nonstopmode -halt-on-error $<
+name = cv
+
+$(name)/$(name).pdf : $(name).tex $(name)/ img/*
+	pdflatex -interaction=nonstopmode -halt-on-error -output-directory=$(name)/ $<
+
+$(name)/ :
+	$(MKDIR) $@
+
+.PHONY : clean clean-all
 
 clean :
-	$(RM) *.aux *.log *.out
 
 clean-all : clean
-	$(RM) *.pdf
+	$(RMDIR) $(name)/
