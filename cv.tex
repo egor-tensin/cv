@@ -9,9 +9,11 @@
 % Sans serif font by default
 \renewcommand\familydefault{\sfdefault}
 
-\usepackage[margin=2.5cm]{geometry} % Document margins
+% Document margins
+\usepackage[margin=2.5cm]{geometry}
 
-\usepackage{graphicx} % \includegraphics, used to include a picture of me
+% \includegraphics, used to include a picture of me
+\usepackage{graphicx}
 
 % === Typography ===
 
@@ -37,13 +39,13 @@
 
 % === Custom commands ===
 
-% "C++", taken from http://tex.stackexchange.com/a/4304/9088
+% "C++", thanks to this guy: http://tex.stackexchange.com/a/4304/9088
 \usepackage{relsize}
 \newcommand\CXX{%
   C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\relsize{-3}{\textbf{++}}}%
 }
 
-% Whitespace skips
+% Whitespace
 \newcommand\CvSmallSkipLength{0.5em}
 \newcommand\CvBigSkipLength{1em}
 
@@ -55,7 +57,7 @@
 % Section headers ("Experience", "Education", etc.)
 \newcommand\CvSectionHeader[1]{\CvBigSkip\textbf{#1}\CvBigSkip}
 
-% Horizontal rules
+% Horizontal line/separator
 \newcommand\CvRule{\begingroup\color{CvRuleColor}\hrule\endgroup}
 
 % Workplace header
