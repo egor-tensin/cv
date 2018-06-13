@@ -20,6 +20,7 @@
 % == Boxes ==
 \usepackage{adjustbox}
 \usepackage{calc}
+\usepackage{tabularx}
 
 % == Colors ==
 \usepackage[usenames,dvipsnames]{color}
@@ -41,9 +42,7 @@
 
 % "C++", thanks to this guy: http://tex.stackexchange.com/a/4304/9088
 \usepackage{relsize}
-\newcommand\CXX{%
-  C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\relsize{-3}{\textbf{++}}}%
-}
+\newcommand\CXX{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\relsize{-3}{\textbf{++}}}}
 
 % Whitespace
 \newcommand\CvSmallSkipLength{0.5em}
@@ -62,16 +61,16 @@
 
 % Workplace header
 \newcommand\CvWorkplaceHeader[5]{\begingroup%
-  \CvRule
+  \CvRule%
   \fboxsep0pt%
   \colorbox{CvWorkplaceHeaderColor}{%
     \begin{minipage}{\linewidth-2\fboxsep}%
-\CvSmallSkip
-#1 -- #2 \hfill \textit{#3} at #4 (\href{http://#5/}{#5})
-\CvSmallSkip
+\CvSmallSkip%
+#1 -- #2 \hfill \textit{#3} at #4 (\href{http://#5/}{#5})%
+\CvSmallSkip%
     \end{minipage}%
   }%
-  \CvRule
+  \CvRule%
 \endgroup}
 
 % Workplace description
@@ -86,28 +85,37 @@
 \begin{document}
 
 \adjustbox{valign=t}{%
-\begin{minipage}{3.5cm}
+\begin{minipage}{3.5cm}%
 \includegraphics[width=3.5cm]{img/selfie_face.jpg}
 \end{minipage}}%
 \hfill%
 \adjustbox{valign=t}{%
 \begin{minipage}{\linewidth-3.5cm-\CvBigSkipLength}%
-{\bf\large Egor Tensin} \\*
+{\bf\large Egor Tensin}\\*
 {\color{CvRuleColor} Last updated on: \today}
 \CvBigSkip
 \CvRule
 \CvSmallSkip
-E-mail: \href{mailto:Egor.Tensin@gmail.com}{Egor.Tensin@gmail.com} \\*
-Web: \href{https://egor-tensin.github.io/}{https://egor-tensin.github.io/} \\*
-Tel.: +7\,(911)\,982-06-81 \\*
-Address: 7 Koroleva prospekt, apt. 378 \textbullet\ Saint Petersburg \textbullet\ Russia \textbullet\ 197341
+\begin{tabularx}{\textwidth}{@{}lX}
+E-mail: & \href{mailto:Egor.Tensin@gmail.com}{Egor.Tensin@gmail.com} \\
+Web: & \href{https://egor-tensin.github.io/}{https://egor-tensin.github.io/} \\
+Tel.: & +7\,(911)\,982-06-81 \\
+Address: & 15 Kolomyazhskiy prospekt, bldg. 2, apt. 773 \\
+& Saint Petersburg, Russia, 197348 \\
+\end{tabularx}%
 \CvSmallSkip
 \CvRule
 \end{minipage}}
 
 \CvSectionHeader{Experience}
 
-\CvWorkplaceHeader{September 2014}{present}{Software Engineer}{Netwrix Corp.}{www.netwrix.com}
+\CvWorkplaceHeader{September 2017}{present}{Senior {\CXX} Engineer}{Flightradar24 AB}{www.flightradar24.com}
+
+\begin{CvWorkplaceDescription}
+\textit{Work in progress\ldots}
+\end{CvWorkplaceDescription}
+
+\CvWorkplaceHeader{September 2014}{August 2017}{Software Engineer}{Netwrix Corp.}{www.netwrix.com}
 
 \begin{CvWorkplaceDescription}
 I have been taking part in development of an enterprise-scale product as a
