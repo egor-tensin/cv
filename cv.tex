@@ -71,7 +71,8 @@
     \end{minipage}%
   }%
   \CvRule%
-\endgroup}
+\endgroup%
+}
 
 % Workplace description
 \newenvironment{CvWorkplaceDescription}{%
@@ -85,27 +86,29 @@
 \begin{document}
 
 \adjustbox{valign=t}{%
-\begin{minipage}{3.5cm}%
-\includegraphics[width=3.5cm]{img/selfie_face.jpg}
-\end{minipage}}%
+  \begin{minipage}{3.5cm}%
+    \includegraphics[width=3.5cm]{img/selfie_face.jpg}
+  \end{minipage}%
+}%
 \hfill%
 \adjustbox{valign=t}{%
-\begin{minipage}{\linewidth-3.5cm-\CvBigSkipLength}%
-{\bf\large Egor Tensin}\\*
+  \begin{minipage}{\linewidth-3.5cm-\CvBigSkipLength}%
+{\bfseries\large Egor Tensin}\\*
 {\color{CvRuleColor} Last updated on: \today}
-\CvBigSkip
-\CvRule
-\CvSmallSkip
-\begin{tabularx}{\textwidth}{@{}lX}
+    \CvBigSkip
+    \CvRule
+    \CvSmallSkip
+    \begin{tabularx}{\textwidth}{@{}lX}
 E-mail: & \href{mailto:Egor.Tensin@gmail.com}{Egor.Tensin@gmail.com} \\
 Web: & \href{https://egor-tensin.github.io/}{https://egor-tensin.github.io/} \\
 Tel.: & +7\,(911)\,982-06-81 \\
 Address: & 15 Kolomyazhskiy prospekt, bldg. 2, apt. 773 \\
 & Saint Petersburg, Russia, 197348 \\
-\end{tabularx}%
-\CvSmallSkip
-\CvRule
-\end{minipage}}
+    \end{tabularx}%
+    \CvSmallSkip
+    \CvRule
+  \end{minipage}%
+}
 
 \CvSectionHeader{Experience}
 
@@ -122,19 +125,20 @@ I have been taking part in development of an enterprise-scale product as a
 member of a core R\&D team.
 I was responsible for developing various low-level components:
 \begin{itemize}[noitemsep]
-\item a "task scheduler" to provide means of asynchronous execution using
-thread pools,
-\item a modular RESTful API implementation,
-\item etc.
+  \item a "task scheduler" to provide means of asynchronous execution using
+  thread pools,
+  \item a modular RESTful API implementation,
+  \item etc.
 \end{itemize}
 
 Key skills \& technologies employed:
 \begin{itemize}[noitemsep]
-\item native Microsoft Windows development,
-\item {\CXX} programming, with the focus on multithreading,
-\item .NET programming using C\#,
-\item Microsoft SQL Server \& related technologies (Reporting Services, etc.),
-\item XML \& related technologies (XSLT, XSD, etc.).
+  \item native Microsoft Windows development,
+  \item {\CXX} programming, with the focus on multithreading,
+  \item .NET programming using C\#,
+  \item Microsoft SQL Server \& related technologies (Reporting Services,
+etc.),
+  \item XML \& related technologies (XSLT, XSD, etc.).
 \end{itemize}
 \end{CvWorkplaceDescription}
 
@@ -152,13 +156,13 @@ systems, including profiling, benchmarking, etc.
 
 Key skills \& technologies employed:
 \begin{itemize}[noitemsep]
-\item native Microsoft Windows \& Linux development,
-\item Microsoft Windows \& Linux kernel module development,
-\item {\CXX} programming (inc. {\CXX}11 \& Boost),
-\item C \& x86(-64) assembly language programming,
-\item cross-platform development technologies (POSIX, CMake, etc.),
-\item Microsoft Windows kernel debugging,
-\item profiling using perf, Microsoft Windows Performance Toolkit and Intel
+  \item native Microsoft Windows \& Linux development,
+  \item Microsoft Windows \& Linux kernel module development,
+  \item {\CXX} programming (inc. {\CXX}11 \& Boost),
+  \item C \& x86(-64) assembly language programming,
+  \item cross-platform development technologies (POSIX, CMake, etc.),
+  \item Microsoft Windows kernel debugging,
+  \item profiling using perf, Microsoft Windows Performance Toolkit and Intel
 VTune Amplifier.
 \end{itemize}
 \end{CvWorkplaceDescription}
@@ -173,14 +177,14 @@ system performance issues was developed.
 
 Key skills \& technologies employed or studied:
 \begin{itemize}[noitemsep]
-\item native Microsoft Windows development,
-\item Microsoft Windows kernel module development,
-\item C \& x86(-64) assembly language programming,
-\item Python programming,
-\item Microsoft Windows kernel debugging,
-\item x86(-64) architecture (interrupts, caches, memory barriers, atomic
-operations, etc.),
-\item undocumented Microsoft Windows features (system service dispatching,
+  \item native Microsoft Windows development,
+  \item Microsoft Windows kernel module development,
+  \item C \& x86(-64) assembly language programming,
+  \item Python programming,
+  \item Microsoft Windows kernel debugging,
+  \item x86(-64) architecture (interrupts, caches, memory barriers, atomic
+  operations, etc.),
+  \item undocumented Microsoft Windows features (system service dispatching,
 etc.).
 \end{itemize}
 \end{CvWorkplaceDescription}
@@ -193,50 +197,49 @@ etc.).
 %\begin{CvWorkplaceDescription}
 %During my education, I've been focusing on the following topics:
 %\begin{itemize}[noitemsep]
-%\item x86(-64) architecture (including writing a term paper "Verification of a
-%x86-64 disassembler"),
-%\item x86(-64) microarchitecture (including working on my bachelor thesis
+  %\item x86(-64) architecture (including writing a term paper "Verification of
+%a x86-64 disassembler"),
+  %\item x86(-64) microarchitecture (including working on my bachelor thesis
 %"Attacking AES in a cloud using CPU caches").
 %\end{itemize}
 %\end{CvWorkplaceDescription}
 %\CvRule
 
-\begin{minipage}[t]{.49\linewidth}
-\CvSectionHeader{Programming Languages}
+\begin{minipage}[t]{.5\linewidth}
+  \CvSectionHeader{Programming Languages}
 
-\begin{itemize}
-\item C, x86(-64) assembly
-\item \CXX\ (inc. {\CXX}11 \& Boost)
-\item Python
-\end{itemize}
+  \begin{itemize}
+    \item C, x86(-64) assembly
+    \item \CXX\ (inc. {\CXX}11 \& Boost)
+    \item Python
+  \end{itemize}
 
-\CvSectionHeader{Development Tools \& Technologies}
+  \CvSectionHeader{Development Tools \& Technologies}
 
-\begin{itemize}
-\item Microsoft Visual Studio
-\item CMake, GNU Make
-\item CMD, GNU Bash, PowerShell
-\item AccuRev, Apache Subversion, Git, TFS
-\item GDB, WinDbg
-\item perf, Xperf, Intel VTune Amplifier
-\end{itemize}
-\hfill
+  \begin{itemize}
+    \item Microsoft Visual Studio
+    \item CMake, GNU Make
+    \item CMD, GNU Bash, PowerShell
+    \item AccuRev, Apache Subversion, Git, TFS
+    \item GDB, WinDbg
+    \item perf, Xperf, Intel VTune Amplifier
+  \end{itemize}
 \end{minipage}
-\begin{minipage}[t]{.49\linewidth}
-\CvSectionHeader{Languages}
+\begin{minipage}[t]{.5\linewidth}
+  \CvSectionHeader{Languages}
 
-\begin{itemize}
-\item Russian --- mother tongue.
-\item English --- B2 (upper intermediate).
-\end{itemize}
+  \begin{itemize}
+    \item Russian --- mother tongue.
+    \item English --- B2 (upper intermediate).
+  \end{itemize}
 
-\CvSectionHeader{Other Tools \& Technologies}
+  \CvSectionHeader{Other Tools \& Technologies}
 
-\begin{itemize}
-\item LibreOffice, Microsoft Office
-\item CygWin
-\item \LaTeX
-\end{itemize}
+  \begin{itemize}
+    \item LibreOffice, Microsoft Office
+    \item CygWin
+    \item \LaTeX
+  \end{itemize}
 \end{minipage}
 
 \end{document}
