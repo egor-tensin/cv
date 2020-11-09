@@ -57,7 +57,7 @@
 
 % Workplace header
 \newcommand\CvWorkplaceHeader[5]{\begingroup%
-  \CvRule%
+  \CvRule\nopagebreak%
   \fboxsep0pt%
   \colorbox{CvWorkplaceHeaderColor}{%
     \begin{minipage}{\linewidth-2\fboxsep}%
@@ -99,8 +99,8 @@ E-mail: & \href{mailto:Egor.Tensin@gmail.com}{Egor.Tensin@gmail.com} \\
 Web: & \href{https://egor-tensin.github.io/}{https://egor-tensin.github.io/} \\
 & \href{https://github.com/egor-tensin}{https://github.com/egor-tensin} \\
 Tel.: & +7\,(911)\,982-06-81 \\
-Address: & 15 Kolomyazhskiy prospekt, bldg. 2, apt. 773 \\
-& Saint Petersburg, Russia, 197348 \\
+Address: & 3 Ushakovskaya Naberezhnaya, bldg. 2, apt. 409 \\
+& Saint Petersburg, Russia, 197342 \\
     \end{tabularx}%
     \CvSmallSkip
     \CvRule
@@ -108,6 +108,20 @@ Address: & 15 Kolomyazhskiy prospekt, bldg. 2, apt. 773 \\
 }
 
 \CvSectionHeader{Experience}
+
+\CvWorkplaceHeader{January 2020}{October 2020}{Senior {\CXX} Engineer}{Bercut Ltd.}{www.bercut.com}
+
+\begin{CvWorkplaceDescription}
+I was a member of a backend team responsible for developing key parts of a
+billing system used by various telecom operators.
+
+\begin{itemize}[noitemsep]
+  \item Cross-platform (Windows, Linux \& Solaris) development.
+  \item {\CXX} programming.
+  \item Python/{\CXX} interop using Boost.Python.
+  \item Some containerization work using Docker.
+\end{itemize}
+\end{CvWorkplaceDescription}
 
 \CvWorkplaceHeader{September 2017}{July 2019}{Senior {\CXX} Engineer}{Flightradar24 AB}{www.flightradar24.com}
 
@@ -117,12 +131,11 @@ Flightradar24 project.
 I was responsible for how various parts of the backend received, processed and
 stored third-party data in an efficient \& robust manner.
 
-Key skills \& technologies:
 \begin{itemize}[noitemsep]
-  \item native Linux development,
-  \item {\CXX} programming (inc. {\CXX}17 \& Boost),
-  \item Python programming,
-  \item containerization and orchestration using Docker \& Kubernetes,
+  \item Native Linux development.
+  \item {\CXX} programming (inc. {\CXX}17 \& Boost).
+  \item Python programming.
+  \item Containerization and orchestration using Docker.
   \item AWS (EC2, Lambda, DynamoDB, S3).
 \end{itemize}
 \end{CvWorkplaceDescription}
@@ -133,19 +146,18 @@ Key skills \& technologies:
 I took part in the development of an enterprise-scale product as a member of a
 core R\&D team.
 I was responsible for developing various low-level components (among others):
-\begin{itemize}[noitemsep]
+\begin{enumerate}[noitemsep]
   \item a "task scheduler" to provide means of asynchronous execution for
 other components,
   \item a modular RESTful API implementation.
-\end{itemize}
+\end{enumerate}
 
-Key skills \& technologies:
 \begin{itemize}[noitemsep]
-  \item native Microsoft Windows development (WinAPI, COM, ATL),
-  \item {\CXX} programming,
-  \item .NET programming using C\#,
+  \item Native Microsoft Windows development (WinAPI, COM, ATL).
+  \item {\CXX} programming.
+  \item .NET programming using C\#.
   \item Microsoft SQL Server \& related technologies (Reporting Services,
-etc.),
+etc.).
   \item XML \& related technologies (XSLT, XSD, etc.).
 \end{itemize}
 \end{CvWorkplaceDescription}
@@ -156,18 +168,16 @@ etc.),
 I developed and maintained a tool for revealing, analyzing and solving storage
 system performance issues, specifically process \& thread synchronization
 issues.
-
 I also troubleshooted general performance issues within enterprise storage
 systems, including profiling, benchmarking, etc.
 
-Key skills \& technologies:
 \begin{itemize}[noitemsep]
-  \item native Microsoft Windows \& Linux development,
-  \item Microsoft Windows \& Linux kernel module development,
-  \item {\CXX} programming (inc. {\CXX}11 \& Boost),
-  \item C \& x86(-64) assembly language programming,
-  \item Microsoft Windows kernel debugging,
-  \item performance profiling.
+  \item Native Microsoft Windows \& Linux development.
+  \item Microsoft Windows \& Linux kernel module development.
+  \item {\CXX} programming (inc. {\CXX}11 \& Boost).
+  \item C \& x86(-64) assembly language programming.
+  \item Microsoft Windows kernel debugging.
+  \item Performance profiling.
 \end{itemize}
 \end{CvWorkplaceDescription}
 
@@ -179,14 +189,13 @@ system by process \& thread synchronization issues.
 A prototype of a tool for revealing, analyzing and solving specific storage
 system performance issues was developed.
 
-Key skills \& technologies:
 \begin{itemize}[noitemsep]
-  \item native Microsoft Windows development,
-  \item Microsoft Windows kernel module development,
-  \item C \& x86(-64) assembly language programming,
-  \item Python programming,
-  \item Microsoft Windows kernel debugging,
-  \item x86(-64) architecture,
+  \item Native Microsoft Windows development.
+  \item Microsoft Windows kernel module development.
+  \item C \& x86(-64) assembly language programming.
+  \item Python programming.
+  \item Microsoft Windows kernel debugging.
+  \item x86(-64) architecture.
   \item undocumented Microsoft Windows features.
 \end{itemize}
 \end{CvWorkplaceDescription}
@@ -238,11 +247,11 @@ Key skills \& technologies:
   \begin{itemize}
     \item \textbf{Operating systems}: Microsoft Windows, Linux
     \item \textbf{IDEs}: Microsoft Visual Studio, CLion
-    \item \textbf{Cloud}: Docker, Kubernetes, AWS
+    \item \textbf{Cloud}: Docker, AWS
     \item \textbf{Build systems}: CMake, GNU Make
     \item \textbf{CI}: Jenkins
     \item \textbf{Scripting}: CMD, GNU Bash, PowerShell
-    \item \textbf{Version Control}: AccuRev, Apache Subversion, Git, TFS
+    \item \textbf{Version Control}: Git, Apache Subversion, TFS, AccuRev
     \item \textbf{Debugging}: GDB, WinDbg
     \item \textbf{Performance}: perf, Xperf, Intel VTune Amplifier
   \end{itemize}
