@@ -6,6 +6,9 @@
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
 
+% \begin{comment}
+\usepackage{verbatim}
+
 % Sans serif by default
 \renewcommand\familydefault{\sfdefault}
 
@@ -207,20 +210,25 @@ system performance issues was developed.
 \end{CvWorkplaceDescription}
 \CvRule
 
-%\CvSectionHeader{Education}
+\begin{comment}
+% Wish I was a properly educated man :-(
 
-%\CvWorkplaceHeader{2009}{2013}{Bachelor of Computer Science}{SPbSU}{eng.spbu.ru}
+\CvSectionHeader{Education}
 
-%\begin{CvWorkplaceDescription}
-%During my education, I've been focusing on the following topics:
-%\begin{itemize}[noitemsep]
-  %\item x86(-64) architecture (including writing a term paper "Verification of
-%a x86-64 disassembler"),
-  %\item x86(-64) microarchitecture (including working on my bachelor thesis
-%"Attacking AES in a cloud using CPU caches").
-%\end{itemize}
-%\end{CvWorkplaceDescription}
-%\CvRule
+\CvWorkplaceHeader{2009}{2013}{Bachelor of Computer Science}{SPbSU}{eng.spbu.ru}
+
+\begin{CvWorkplaceDescription}
+During my education, I've been focusing on the following topics:
+\begin{itemize}[noitemsep]
+  \item x86(-64) architecture (including writing a term paper "Verification of
+a x86-64 disassembler"),
+  \item x86(-64) microarchitecture (including working on my bachelor thesis
+"Attacking AES in a cloud using CPU caches").
+\end{itemize}
+\end{CvWorkplaceDescription}
+\CvRule
+
+\end{comment}
 
 \begin{minipage}[t]{.5\linewidth}
   \CvSectionHeader{Programming Languages}
