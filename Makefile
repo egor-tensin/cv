@@ -25,7 +25,8 @@ $(pdf): $(name).tex img/selfie_face.jpg | $(name)/
 
 .PHONY: clean
 clean:
+	find $(name) '!' -name cv.pdf -type f -delete
 
 .PHONY: clean-all
-clean-all: clean
+clean-all:
 	$(RMDIR) $(name)/
