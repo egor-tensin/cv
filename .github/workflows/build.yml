@@ -19,7 +19,7 @@ jobs:
       - name: PDF as artifact
         uses: actions/upload-artifact@v2
         with:
-          name: Egor_Tensin_CV_en
+          name: cv
           path: cv/cv.pdf
       - name: Clean up auxiliary files
         run: sudo make clean
