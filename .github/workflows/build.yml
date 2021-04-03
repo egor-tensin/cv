@@ -12,12 +12,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Build the PDF
+      - name: Build
         run: |
           docker-compose build
           docker-compose up
-      - name: Upload the PDF
+      - name: PDF as artifact
         uses: actions/upload-artifact@v2
         with:
           name: Egor_Tensin_CV_en
           path: cv/cv.pdf
+      - name: Clean up auxiliary files
+        run: sudo find cv/ '!' -name cv.pdf -type f -delete
+      - name: PDF to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.0
+        with:
+          branch: gh-pages
+          folder: cv
+          single-commit: 1
+        if: github.ref == 'refs/heads/master'
