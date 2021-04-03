@@ -16,14 +16,14 @@ jobs:
         run: |
           docker-compose build
           docker-compose up
-      - name: PDF as artifact
+      - name: Attach as artifact
         uses: actions/upload-artifact@v2
         with:
           name: cv
           path: cv/cv.pdf
-      - name: Clean up auxiliary files
+      - name: Clean up
         run: sudo make clean
-      - name: PDF to GitHub Pages
+      - name: Publish on GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
           branch: gh-pages
