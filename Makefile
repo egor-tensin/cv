@@ -32,7 +32,7 @@ pdf := $(name)/$(name).pdf
 .PHONY: all
 all: $(pdf)
 
-$(pdf): $(name).tex img/selfie_face.jpg | $(name)/
+$(pdf): $(name).tex img/face2020_warm.jpg | $(name)/
 	pdflatex -interaction=nonstopmode -halt-on-error '-output-directory=$(call escape,$(name))/' '$(call escape,$<)'
 
 %/:
