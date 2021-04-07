@@ -21,6 +21,7 @@ jobs:
         with:
           name: cv
           path: cv/cv.pdf
+          if-no-files-found: error
       - name: Clean up
         run: sudo make clean
       - name: Publish on GitHub Pages
