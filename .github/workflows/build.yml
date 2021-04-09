@@ -29,5 +29,5 @@ jobs:
         with:
           branch: gh-pages
           folder: cv
-          single-commit: 1
+          single-commit: true
         if: github.ref == 'refs/heads/master'
