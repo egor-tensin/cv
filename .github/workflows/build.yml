@@ -16,7 +16,7 @@ jobs:
         run: |
           docker-compose build
           docker-compose up
-      - name: Attach as artifact
+      - name: Publish as artifact
         uses: actions/upload-artifact@v2
         with:
           name: cv
@@ -24,7 +24,7 @@ jobs:
           if-no-files-found: error
       - name: Clean up
         run: sudo make clean
-      - name: Publish on GitHub Pages
+      - name: Publish to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
           branch: gh-pages
