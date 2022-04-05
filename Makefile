@@ -6,9 +6,6 @@ unexport MAKEFLAGS
 SHELL := bash
 .SHELLFLAGS := -eu -o pipefail -c
 
-.PHONY: DO
-DO:
-
 escape = $(subst ','\'',$(1))
 
 define noexpand
@@ -28,6 +25,9 @@ RMDIR := rm -r --
 
 name := cv
 pdf := $(name)/$(name).pdf
+
+.PHONY: DO
+DO:
 
 .PHONY: all
 all: $(pdf)
