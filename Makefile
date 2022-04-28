@@ -30,13 +30,24 @@ pdf := $(name)/$(name).pdf
 DO:
 
 .PHONY: all
-all: $(pdf)
+all: build
+
+.PHONY: build
+build: $(pdf)
+
+.PHONY: build/docker
+build/docker:
+	docker-compose run --rm build
 
 $(pdf): $(name).tex img/face2020_warm.jpg | $(name)/
 	pdflatex -interaction=nonstopmode -halt-on-error '-output-directory=$(call escape,$(name))/' '$(call escape,$<)'
 
 %/:
 	$(MKDIR) '$(call escape,$@)'
+
+.PHONY: view
+view:
+	xdg-open '$(call escape,$(pdf))' &> /dev/null
 
 .PHONY: clean
 clean:
