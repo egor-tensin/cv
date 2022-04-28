@@ -13,9 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build
-        run: |
-          docker-compose build
-          docker-compose up
+        run: make build/docker
       - name: Publish as artifact
         uses: actions/upload-artifact@v2
         with:
