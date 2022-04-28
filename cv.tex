@@ -91,14 +91,16 @@
 
 \begin{document}
 
+\newcommand\CvPictureWidth{3.5cm}
+
 \adjustbox{valign=t}{%
-  \begin{minipage}{3.5cm}%
-    \includegraphics[width=3.5cm]{img/face2020_warm.jpg}
+  \begin{minipage}{\CvPictureWidth}%
+    \includegraphics[width=\CvPictureWidth]{img/face2020_warm.jpg}
   \end{minipage}%
 }%
 \hfill%
 \adjustbox{valign=t}{%
-  \begin{minipage}{\linewidth-3.5cm-\CvBigSkipLength}%
+  \begin{minipage}{\linewidth-\CvPictureWidth-\CvBigSkipLength}%
 {\bfseries\large \CvName}\\*
 {\color{CvRuleColor} Last updated on: \today}
     \CvBigSkip
