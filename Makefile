@@ -49,6 +49,18 @@ $(pdf): $(name).tex img/face2020_warm.jpg | $(name)/
 view:
 	xdg-open '$(call escape,$(pdf))' &> /dev/null
 
+REMOTE_USER ?= who
+REMOTE_HOST ?= where
+REMOTE_DIR  ?= /path/to/dir
+
+$(eval $(call noexpand,REMOTE_USER))
+$(eval $(call noexpand,REMOTE_HOST))
+$(eval $(call noexpand,REMOTE_DIR))
+
+.PHONY: deploy
+deploy:
+	rsync -avh -e 'ssh -o StrictHostKeyChecking=no' '$(call escape,$(name)/)' '$(call escape,$(REMOTE_USER)@$(REMOTE_HOST):$(REMOTE_DIR)/)' --delete
+
 .PHONY: clean
 clean:
 	find '$(call escape,$(name))' '!' -name '$(call escape,$(name).pdf)' -type f -delete
