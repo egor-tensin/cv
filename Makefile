@@ -51,7 +51,7 @@ view:
 
 .PHONY: clean
 clean:
-	find '$(call escape,$(name))' '!' -name cv.pdf -type f -delete
+	find '$(call escape,$(name))' '!' -name '$(call escape,$(name).pdf)' -type f -delete
 
 .PHONY: clean-all
 clean-all:
