@@ -51,15 +51,17 @@ view:
 
 REMOTE_USER ?= who
 REMOTE_HOST ?= where
+REMOTE_PORT ?= 22
 REMOTE_DIR  ?= /path/to/dir
 
 $(eval $(call noexpand,REMOTE_USER))
 $(eval $(call noexpand,REMOTE_HOST))
+$(eval $(call noexpand,REMOTE_PORT))
 $(eval $(call noexpand,REMOTE_DIR))
 
 .PHONY: deploy
 deploy:
-	rsync -avh -e 'ssh -o StrictHostKeyChecking=no' '$(call escape,$(name)/)' '$(call escape,$(REMOTE_USER)@$(REMOTE_HOST):$(REMOTE_DIR)/)' --delete
+	rsync -avh -e 'ssh -p $(call escape,$(REMOTE_PORT)) -o StrictHostKeyChecking=no' '$(call escape,$(name)/)' '$(call escape,$(REMOTE_USER)@$(REMOTE_HOST):$(REMOTE_DIR)/)' --delete
 
 .PHONY: clean
 clean:
