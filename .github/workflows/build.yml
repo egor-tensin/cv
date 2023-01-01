@@ -30,7 +30,7 @@ jobs:
           single-commit: true
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
       - name: Set up ssh-agent
-        uses: webfactory/ssh-agent@v0.5.3
+        uses: webfactory/ssh-agent@v0.7.0
         with:
           ssh-private-key: '${{ secrets.REMOTE_SSH_KEY }}'
       - name: Deploy
