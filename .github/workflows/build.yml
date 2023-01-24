@@ -22,13 +22,6 @@ jobs:
           if-no-files-found: error
       - name: Clean up
         run: sudo make clean
-      - name: Publish to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: cv
-          single-commit: true
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
       - name: Set up ssh-agent
         uses: webfactory/ssh-agent@v0.7.0
         with:
