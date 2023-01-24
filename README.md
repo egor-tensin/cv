@@ -1,6 +1,8 @@
 CV
 ==
 
+https://egort.name/cv.pdf
+
 This is my CV.
 Written in LaTeX some years ago.
 Feel free to copy & adapt for your own needs.
