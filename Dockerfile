@@ -1,6 +1,6 @@
 FROM alpine:3.17
 
-RUN apk add --no-cache \
+RUN apk add -q --no-cache \
         bash \
         make \
         texlive \
