@@ -1,7 +1,7 @@
 CV
 ==
 
-https://egort.name/cv.pdf
+https://tensin.name/cv.pdf
 
 This is my CV.
 Written in LaTeX some years ago.
