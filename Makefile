@@ -17,7 +17,7 @@ build: $(pdf)
 
 .PHONY: build/docker
 build/docker:
-	docker-compose run --rm build
+	docker compose run --rm build
 
 $(pdf): $(name).tex img/face.jpg | $(name)/
 	pdflatex -interaction=nonstopmode -halt-on-error '-output-directory=$(call escape,$(name))/' '$(call escape,$<)'
