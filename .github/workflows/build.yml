@@ -11,11 +11,11 @@ jobs:
     name: Build
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Build
         run: make build/docker
       - name: Publish as artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: cv
           path: cv/cv.pdf
@@ -23,7 +23,7 @@ jobs:
       - name: Clean up
         run: sudo make clean
       - name: Set up ssh-agent
-        uses: webfactory/ssh-agent@v0.8.0
+        uses: webfactory/ssh-agent@v0.9.1
         with:
           ssh-private-key: '${{ secrets.REMOTE_SSH_KEY }}'
       - name: Deploy
