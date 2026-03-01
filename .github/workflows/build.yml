@@ -26,6 +26,7 @@ jobs:
         uses: webfactory/ssh-agent@v0.9.1
         with:
           ssh-private-key: '${{ secrets.REMOTE_SSH_KEY }}'
+        if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/master'
       - name: Deploy
         run: make deploy
         env:
