@@ -2,7 +2,6 @@ name: Build
 
 on:
   push:
-  pull_request:
   workflow_dispatch:
 
 jobs:
@@ -26,7 +25,7 @@ jobs:
         uses: webfactory/ssh-agent@v0.9.1
         with:
           ssh-private-key: '${{ secrets.REMOTE_SSH_KEY }}'
-        if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/master'
       - name: Deploy
         run: make deploy
         env:
@@ -34,4 +33,4 @@ jobs:
           REMOTE_HOST: '${{ secrets.REMOTE_HOST }}'
           REMOTE_PORT: '${{ secrets.REMOTE_PORT }}'
           REMOTE_DIR: '${{ secrets.REMOTE_DIR }}'
-        if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/master'
