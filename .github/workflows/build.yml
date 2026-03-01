@@ -14,7 +14,7 @@ jobs:
       - name: Build
         run: make build/docker
       - name: Publish as artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: cv
           path: cv/cv.pdf
