@@ -22,7 +22,7 @@ jobs:
       - name: Clean up
         run: sudo make clean
       - name: Set up ssh-agent
-        uses: webfactory/ssh-agent@v0.9.1
+        uses: webfactory/ssh-agent@v0.10.0
         with:
           ssh-private-key: '${{ secrets.REMOTE_SSH_KEY }}'
         if: github.ref == 'refs/heads/master'
