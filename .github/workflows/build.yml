@@ -17,7 +17,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: cv
-          path: cv/cv.pdf
+          path: out/cv.pdf
           if-no-files-found: error
       - name: Clean up
         run: sudo make clean

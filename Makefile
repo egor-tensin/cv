@@ -4,7 +4,7 @@ MKDIR := mkdir -p --
 RMDIR := rm -r --
 
 name := cv
-pdf := $(name)/$(name).pdf
+pdf := out/$(name).pdf
 
 .PHONY: DO
 DO:
@@ -19,8 +19,8 @@ build: $(pdf)
 build/docker:
 	docker compose run --build --rm build
 
-$(pdf): $(name).tex img/face.jpg | $(name)/
-	pdflatex -interaction=nonstopmode -halt-on-error '-output-directory=$(call escape,$(name))/' '$(call escape,$<)'
+$(pdf): $(name).tex img/face.jpg | out/
+	pdflatex -interaction=nonstopmode -halt-on-error -output-directory=out/ '$(call escape,$<)'
 
 %/:
 	$(MKDIR) '$(call escape,$@)'
@@ -41,12 +41,12 @@ $(eval $(call noexpand,REMOTE_DIR))
 
 .PHONY: deploy
 deploy:
-	rsync -avh -e 'ssh -p $(call escape,$(REMOTE_PORT)) -o StrictHostKeyChecking=no' '$(call escape,$(name)/)' '$(call escape,$(REMOTE_USER)@$(REMOTE_HOST):$(REMOTE_DIR)/)' --delete
+	rsync -avh -e 'ssh -p $(call escape,$(REMOTE_PORT)) -o StrictHostKeyChecking=no' out/ '$(call escape,$(REMOTE_USER)@$(REMOTE_HOST):$(REMOTE_DIR)/)' --delete
 
 .PHONY: clean
 clean:
-	find '$(call escape,$(name))' '!' -name '$(call escape,$(name).pdf)' -type f -delete
+	find out/ '!' -name '$(call escape,$(name).pdf)' -type f -delete
 
 .PHONY: clean-all
 clean-all:
-	$(RMDIR) '$(call escape,$(name))/'
+	$(RMDIR) out/
