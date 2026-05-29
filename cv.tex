@@ -59,6 +59,10 @@
 \usepackage{relsize}
 \newcommand\CXX{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\relsize{-3}{\textbf{++}}}}
 
+% "C#", thanks to this guy: https://tex.stackexchange.com/a/44539
+\newcommand{\Csharp}{%
+  {\settoheight{\dimen0}{C}C\kern-.05em \resizebox{!}{\dimen0}{\raisebox{\depth}{\#}}}}
+
 % Whitespace
 \newcommand\CvSmallSkipLength{0.5em}
 \newcommand\CvBigSkipLength{1em}
@@ -102,7 +106,7 @@
 
 \begin{document}
 
-\newcommand\CvPictureWidth{3.5cm}
+\newcommand\CvPictureWidth{3cm}
 
 \adjustbox{valign=t}{%
   \begin{minipage}{\CvPictureWidth}%
@@ -129,120 +133,81 @@ Location: & Netherlands \\
 
 \CvBigSkip
 
+Senior systems engineer with 12+ years of experience in Linux internals, \CXX, performance engineering, distributed infrastructure, and low-level systems development.
+Worked on live patching technology at CloudLinux, AWS Route53 infrastructure, aircraft-tracking backend systems at Flightradar24, and performance tooling for storage systems at EMC.
+
+\CvBigSkip
+
 \CvWorkplaceHeader{March 2024}{present}{Senior {\CXX} Engineer}{CloudLinux, Inc.}{www.cloudlinux.com}
 
 \begin{CvWorkplaceDescription}
-Back to being a part of the \href{https://tuxcare.com}{TuxCare} team.
-It's a technology that allows live-patching userspace Linux processes without
-restarting them (mainly to get rid of security vulnerabilities).
-
 \begin{itemize}[noitemsep]
-  \item C programming
-  \item ELF file format
-  \item Intricate Linux APIs
-  \item x86-64 architecture
+  \item Developed userspace live-patching infrastructure TuxCare, enabling runtime security patching of Linux processes without service restarts
+  \item Worked on binary patching/runtime code replacement using ELF internals and low-level Linux APIs
+  \item Improved reliability and maintainability of production patch delivery and runtime patch application
 \end{itemize}
 \end{CvWorkplaceDescription}
 
 \CvWorkplaceHeader{January 2023}{March 2024}{SDE}{Amazon Web Services, Inc.}{aws.amazon.com}
 
 \begin{CvWorkplaceDescription}
-Working at AWS Route 53.
-Our work was focused on developing an internal DNS service, used across the
-entire AWS.
-
 \begin{itemize}[noitemsep]
-  \item Deep dive into DNS.
-  \item Some Java work.
-  \item Support for 24/7 systems critical to the entire AWS infrastucture:
-on-call shifts, etc.
-  \item Lots of obtained knowledge about AWS services.
+  \item Developed internal DNS infrastructure within AWS Route53
+  \item Developed and maintained internal DNS infrastructure powering AWS services at hyperscale
+  \item Participated in operational/on-call rotations for critical production services
+  \item Improved reliability and observability of internal DNS services
 \end{itemize}
 \end{CvWorkplaceDescription}
 
 \CvWorkplaceHeader{December 2020}{December 2022}{Senior {\CXX} Engineer}{CloudLinux, Inc.}{www.cloudlinux.com}
 
 \begin{CvWorkplaceDescription}
-I was a member of the \href{https://tuxcare.com/}{TuxCare} team.
-It's a technology that allows live-patching userspace Linux processes without
-restarting them (mainly to get rid of security vulnerabilities).
-I was a key developer of \href{https://tuxcare.com/live-patching-services/dbcare/}{DBcare},
-which extends the technology to cover mainstream database solutions.
-
 \begin{itemize}[noitemsep]
-  \item C programming
-  \item ELF file format
-  \item Intricate Linux APIs
-  \item x86-64 architecture
+  \item Developed userspace live-patching infrastructure TuxCare, enabling runtime security patching of Linux processes without service restarts
+  \item Served as a key developer of DBcare, extending live-patching support to mainstream database systems
+  \item Worked extensively with ELF internals, runtime binary patching, and low-level Linux APIs
+  \item Developed performance-sensitive systems software in C/{\CXX} for x86-64 Linux environments
+  \item Improved reliability and maintainability of production patch delivery and runtime patch application
 \end{itemize}
 \end{CvWorkplaceDescription}
 
 \CvWorkplaceHeader{January 2020}{October 2020}{Senior {\CXX} Engineer}{Bercut Ltd.}{bercut.com}
 
 \begin{CvWorkplaceDescription}
-I was a member of the \href{https://bercut.com/products/in-voice/}{IN@Voice}
-team.
-IN@Voice is a billing system for telecom operators.
-I was responsible for developing and maintaining key parts of the billing
-logic.
-
 \begin{itemize}[noitemsep]
-  \item Cross-platform (Windows, Linux \& Solaris) development
-  \item {\CXX} programming
-  \item Python/{\CXX} interop
+  \item Developed backend components for a telecom billing platform in modern \CXX
+  \item Worked on cross-platform systems targeting Windows, Linux, and Solaris
 \end{itemize}
 \end{CvWorkplaceDescription}
 
 \CvWorkplaceHeader{September 2017}{July 2019}{Senior {\CXX} Engineer}{Flightradar24 AB}{www.flightradar24.com}
 
 \begin{CvWorkplaceDescription}
-Flightradar24 is an aircraft-tracking service.
-I worked on the backend part, which was responsible for receiving, processing
-and storing data from on-ground sources and satellites.
 
 \begin{itemize}[noitemsep]
-  \item Native Linux development
-  \item {\CXX} programming (inc. {\CXX}17 \& Boost)
-  \item Python programming
-  \item Cloud: Docker \& AWS services
+  \item Developed backend systems responsible for ingesting, processing, and storing real-time aircraft telemetry data
+  \item Worked on high-throughput Linux services receiving data from satellites and ground stations
+  \item Built native backend services in {\CXX} and Python with focus on reliability and performance
+  \item Worked with AWS infrastructure and Dockerized deployments supporting globally distributed systems
 \end{itemize}
 \end{CvWorkplaceDescription}
 
 \CvWorkplaceHeader{September 2014}{August 2017}{Software Engineer}{Netwrix Corp.}{www.netwrix.com}
 
 \begin{CvWorkplaceDescription}
-\href{https://www.netwrix.com/auditor.html}{Netwrix Auditor} is an IT
-infrastructure security product.
-It allows sysadmins to easily audit changes in AD domains, MS SQL Server
-databases, file shares, etc.
-I worked on the backend part, which collected and stored data; I was
-responsible for a number of subsystems, including implementing an efficient and
-modular RESTful API for our storage system.
-
 \begin{itemize}[noitemsep]
-  \item Native Windows development (WinAPI, COM)
-  \item {\CXX} programming
-  \item .NET programming using C\#
-  \item Microsoft SQL Server \& related technologies (Reporting Services,
-etc.)
-  \item XML \& related technologies (XSLT, XSD, etc.)
+  \item Developed backend services and internal APIs for enterprise infrastructure auditing software Netwrix Auditor
+  \item Worked with \CXX, \Csharp, Windows internals, and Microsoft SQL Server
 \end{itemize}
 \end{CvWorkplaceDescription}
 
 \CvWorkplaceHeader{April 2012}{May 2014}{Performance Engineer}{EMC Corp.}{russia.emc.com}
 
 \begin{CvWorkplaceDescription}
-I was a member of a internal performance team, responsible for revealing,
-analyzing and solving storage system performance issues, with the focus on
-process \& thread synchronization issues.
-This included developing specialized tools, using profilers, benchmarking, etc.
-
 \begin{itemize}[noitemsep]
-  \item Windows \& Linux kernel module development
-  \item {\CXX} programming (inc. {\CXX}11 \& Boost)
-  \item C \& x86(-64) assembly language programming
-  \item Performance profiling
-  \item x86(-64) architecture
+  \item Investigated synchronization and performance bottlenecks in large-scale storage systems
+  \item Developed low-level profiling and benchmarking tools for Linux and Windows
+  \item Worked with \CXX, C, and x86-64 assembly in performance-critical environments
 \end{itemize}
 \end{CvWorkplaceDescription}
 
@@ -266,6 +231,26 @@ a x86-64 disassembler"),
 \end{comment}
 
 \begin{minipage}[t]{.5\linewidth}
+  \CvSectionHeader{Core Expertise}
+
+  \begin{itemize}
+    \item Linux systems programming
+    \item Modern {\CXX} ({\CXX}17/20)
+    \item Performance optimization
+    \item Distributed systems
+    \item Low-level debugging
+    \item ELF internals \& binary patching
+    \item x86-64 architecture
+  \end{itemize}
+
+  \CvSectionHeader{Languages}
+
+  \begin{itemize}
+    \item English, Russian
+  \end{itemize}
+
+\end{minipage}%
+\begin{minipage}[t]{.5\linewidth}
   \CvSectionHeader{Programming Languages}
 
   \begin{itemize}
@@ -274,27 +259,15 @@ a x86-64 disassembler"),
     \item Python
   \end{itemize}
 
-  \CvSectionHeader{Languages}
+  \CvSectionHeader{Infrastructure \& Tooling}
 
   \begin{itemize}
-    \item Russian --- mother tongue.
-    \item English --- C1 (advanced).
-  \end{itemize}
-
-\end{minipage}%
-\begin{minipage}[t]{.5\linewidth}
-  \CvSectionHeader{Development Tools \& Technologies}
-
-  \begin{itemize}
-    \item \textbf{Operating systems}: Linux, Windows
-    \item \textbf{IDEs}: Visual Studio, CLion
     \item \textbf{Cloud}: Docker, AWS, DigitalOcean
     \item \textbf{Build systems}: CMake, GNU Make
-    \item \textbf{CI}: GitHub Actions, Jenkins, Travis
-    \item \textbf{Scripting}: bash, PowerShell, cmd
-    \item \textbf{Version Control}: Git, Subversion, TFS
+    \item \textbf{CI}: GitHub Actions, Jenkins
+    \item \textbf{Version Control}: Git, Subversion
     \item \textbf{Debugging}: GDB, WinDbg
-    \item \textbf{Performance}: perf, Xperf, Intel VTune Amplifier
+    \item \textbf{Performance}: perf, Intel VTune Amplifier
   \end{itemize}
 \end{minipage}
 
