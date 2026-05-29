@@ -19,7 +19,7 @@ build: $(pdf)
 build/docker:
 	docker compose run --build --rm build
 
-$(pdf): $(name).tex img/face.jpg | out/
+$(pdf): $(name).tex | out/
 	pdflatex -interaction=nonstopmode -halt-on-error -output-directory=out/ '$(call escape,$<)'
 
 %/:

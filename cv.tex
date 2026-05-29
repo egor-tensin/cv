@@ -24,9 +24,6 @@
 % Document margins
 \usepackage[margin=2.5cm]{geometry}
 
-% \includegraphics, used to include a picture of me
-\usepackage{graphicx}
-
 % Boxes
 \usepackage{adjustbox}
 \usepackage{calc}
@@ -106,36 +103,22 @@
 
 \begin{document}
 
-\newcommand\CvPictureWidth{3cm}
-
-\adjustbox{valign=t}{%
-  \begin{minipage}{\CvPictureWidth}%
-    \includegraphics[width=\CvPictureWidth]{img/face.jpg}
-  \end{minipage}%
-}%
-\hfill%
-\adjustbox{valign=t}{%
-  \begin{minipage}{\linewidth-\CvPictureWidth-\CvBigSkipLength}%
 {\bfseries\Large \CvName}
-    \CvBigSkip
-    \CvRule
-    \CvSmallSkip
-    \begin{tabularx}{\textwidth}{@{}lX}
+\CvBigSkip
+\CvRule
+\CvSmallSkip
+\begin{tabularx}{\textwidth}{@{}lX}
 Email: & \href{mailto:\CvEmail}{\CvEmail} \\
 Web: & \href{https://tensin.name/}{tensin.name}\enspace{}\textopenbullet{}\enspace{}\href{https://github.com/egor-tensin}{github.com/egor-tensin} \\
 Tel.: & \href{https://t.me/egor_tensin}{+31\,6\,41149079} \\
 Location: & Netherlands \\
-    \end{tabularx}%
-    \CvSmallSkip
-    \CvRule
-  \end{minipage}%
-}
+\end{tabularx}
+\CvSmallSkip
+\CvRule
 
 \CvBigSkip
-
 Senior systems engineer with 12+ years of experience in Linux internals, \CXX, performance engineering, distributed infrastructure, and low-level systems development.
 Worked on live patching technology at CloudLinux, AWS Route53 infrastructure, aircraft-tracking backend systems at Flightradar24, and performance tooling for storage systems at EMC.
-
 \CvBigSkip
 
 \CvWorkplaceHeader{March 2024}{present}{Senior {\CXX} Engineer}{CloudLinux, Inc.}{www.cloudlinux.com}
