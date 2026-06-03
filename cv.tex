@@ -76,18 +76,19 @@
 \newcommand\CvRule{\begingroup\color{CvRuleColor}\hrule\endgroup}
 
 % Workplace header
-\newcommand\CvWorkplaceHeader[5]{\begingroup%
-  \CvRule\nopagebreak%
-  \fboxsep0pt%
-  \colorbox{CvWorkplaceHeaderColor}{%
-    \begin{minipage}{\linewidth-2\fboxsep}%
+\newcommand\CvWorkplaceHeader[5]{
+  \begingroup%
+    \CvRule\nopagebreak%
+    \fboxsep0pt%
+    \colorbox{CvWorkplaceHeaderColor}{%
+      \begin{minipage}{\linewidth-2\fboxsep}%
 \CvSmallSkip%
 #1 -- #2 \hfill \textit{#3} at #4 (\href{http://#5/}{#5})%
 \CvSmallSkip%
-    \end{minipage}%
-  }%
-  \CvRule%
-\endgroup%
+      \end{minipage}%
+    }%
+    \CvRule%
+  \endgroup%
 }
 
 % Workplace description
