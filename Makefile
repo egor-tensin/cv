@@ -1,13 +1,7 @@
 include prelude.mk
 
-MKDIR := mkdir -p --
-RMDIR := rm -r --
-
 name := cv
 pdf := out/$(name).pdf
-
-.PHONY: DO
-DO:
 
 .PHONY: all
 all: build
@@ -22,8 +16,8 @@ build/docker:
 $(pdf): $(name).tex | out/
 	pdflatex -interaction=nonstopmode -halt-on-error -output-directory=out/ '$(call escape,$<)'
 
-%/:
-	$(MKDIR) '$(call escape,$@)'
+out/:
+	mkdir -p -- '$(call escape,$@)'
 
 .PHONY: view
 view:
@@ -45,8 +39,4 @@ deploy:
 
 .PHONY: clean
 clean:
-	find out/ '!' -name '$(call escape,$(name).pdf)' -type f -delete
-
-.PHONY: clean-all
-clean-all:
-	$(RMDIR) out/
+	rm -rf out/
