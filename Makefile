@@ -13,8 +13,8 @@ build: $(pdf)
 build/docker:
 	docker compose run --build --rm build
 
-$(pdf): $(name).tex | out/
-	pdflatex -interaction=nonstopmode -halt-on-error -output-directory=out/ '$(call escape,$<)'
+$(pdf): src/main.tex | out/
+	pdflatex -interaction=nonstopmode -halt-on-error '$(call escape,-jobname=$(name))' -output-directory=out/ '$(call escape,$<)'
 
 out/:
 	mkdir -p -- '$(call escape,$@)'
