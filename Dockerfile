@@ -5,6 +5,8 @@ RUN apk add -q --no-cache \
         make \
         texlive-full
 
+COPY [".", "/usr/src/"]
+
 WORKDIR /usr/src
 
 CMD ["make"]

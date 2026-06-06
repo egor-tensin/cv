@@ -2,4 +2,4 @@ services:
   build:
     build: .
     volumes:
-      - ./:/usr/src
+      - ./out/:/usr/src/out
