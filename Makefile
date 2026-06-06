@@ -39,4 +39,8 @@ deploy:
 
 .PHONY: clean
 clean:
+	find out/ '!' -name '$(call escape,$(name).pdf)' -type f -delete
+
+.PHONY: clean-all
+clean-all:
 	rm -rf out/
