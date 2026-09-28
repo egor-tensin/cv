@@ -1,7 +1,7 @@
 include prelude.mk
 
 name := cv
-pdf := out/$(name).pdf
+pdf  := out/$(name).pdf
 
 .PHONY: all
 all: build
